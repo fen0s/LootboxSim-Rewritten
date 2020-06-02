@@ -42,9 +42,9 @@ class Application():
         
         #inventory window button
         invbutton = tk.Button(self.root,
-                        text = 'Open inventory',
+                        text='Open inventory',
                         width=20, height = 1,
-                        bg = "#e07ef9", fg='purple', font='arial 10')
+                        bg="#e07ef9", fg='purple', font='arial 10')
         
         invbutton.bind('<Button-1>', self.openinv)
         invbutton.place(relx=0.1, rely=0.02, anchor=tk.CENTER)
@@ -54,7 +54,7 @@ class Application():
                             text=engine.balancestr,
                             width=20, height=1,
                             bg='#bd7ad8', fg='#59d327', font='arial 10')
-        self.balancelabel.place(relx = 0.1, rely = 0.97, anchor = tk.CENTER)
+        self.balancelabel.place(relx=0.1, rely=0.97, anchor=tk.CENTER)
         
         self.root.mainloop()
     
@@ -99,9 +99,8 @@ class Application():
                 lootlb.pack(side='top')
                 
                 loot = self.inventory.generate_loot()
-                self.inventory.add_to_inventory(loot[1], loot[2])
-                tier = loot[0]
-                item = loot[1]
+                tier, item, price = loot[0], loot[1], loot[2]
+                self.inventory.add_to_inventory(item, price])
                 
                 #loot text
                 loot = tk.Label(lootwindow,
@@ -143,7 +142,7 @@ class Application():
         
         inv_title = tk.Label(inv_window,
                         text='YOUR ITEMS:',
-                        width = 30, height = 2,
+                        width=30, height=2,
                         font='arial 22')
         inv_title.pack(side='top')
         
