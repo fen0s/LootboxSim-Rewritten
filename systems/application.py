@@ -88,7 +88,7 @@ class Application():
 
     def get_loot(self, opening_window):
                 self.open_button['state'] = tk.NORMAL
-                opening_window.destroy()
+                opening_window.destroy() #destroy the "please wait" window
 
                 lootwindow = tk.Toplevel()
                 lootwindow.geometry('600x400')
@@ -100,7 +100,7 @@ class Application():
                 
                 loot = self.inventory.generate_loot()
                 tier, item, price = loot[0], loot[1], loot[2]
-                self.inventory.add_to_inventory(item, price])
+                self.inventory.add_to_inventory(item, price)
                 
                 #loot text
                 loot = tk.Label(lootwindow,
